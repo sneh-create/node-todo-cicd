@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: snehcreatenodetodocicd 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: snehcreatenodetodocicd
+  template:
+    metadata:
+      labels:
+        app: snehcreatenodetodocicd 
+    spec:
+      containers:
+        - name: snehcreatenodetodocicd 
+          image: devazuretest.azurecr.io/snehcreatenodetodocicd
+          ports:
+          - containerPort: 8000
